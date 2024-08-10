@@ -6,9 +6,9 @@ arguments = sys.argv
 
 
 def create_directory_only(folders: list) -> str:
-    path = "/".join([d for d in folders])
+    path = os.path.join(*folders)
     os.makedirs(path, exist_ok=True)
-    return path
+    return str(path)
 
 
 def create_file_only(file_name: str) -> None:
